@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Person from './Person/Person'
 import './App.css';
 
 class App extends Component {
@@ -7,6 +7,9 @@ class App extends Component {
     return (
       <div className="App">
           <h1>Practising reactjs</h1>
+          <Person name="Ammi" age="30"/>
+          <Person name="Reddy" age="31">Hobbies: Swimming</Person>
+          <Person name="Kovvuri" age="32"/>
       </div>
     );
   }
