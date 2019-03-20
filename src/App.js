@@ -11,6 +11,16 @@ class App extends Component {
     ]
   };
 
+  onChangeHandler = (event) => {
+    this.setState({
+      persons: [
+        {name: 'max', age: 30},
+        {name: 'Reddy', age: 31},
+        {name: event.target.value, age: 32}
+       ],
+       otherState: 'Other value3'
+    })
+  }
   switchHandler = (newValue) => {
      this.setState({
        persons: [
@@ -18,7 +28,7 @@ class App extends Component {
         {name: 'Reddy', age: 31},
         {name: 'Kovvuri', age: 32}
        ],
-       otherState: 'Other value'
+       otherState: 'Other value2'
      });
   }
   render() {
@@ -28,7 +38,8 @@ class App extends Component {
           <button onClick={this.switchHandler.bind(this, 'Max')}>Switch name</button>
           <Person  name={this.state.persons[0].name} age={this.state.persons[0].age}/>
           <Person click={this.switchHandler.bind(this, 'KAR')} name={this.state.persons[1].name} age={this.state.persons[1].age}>Hobbies: Swimming</Person>
-          <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
+          <Person name={this.state.persons[2].name} age={this.state.persons[2].age}
+          change={this.onChangeHandler}/>
       </div>
     );
   }
